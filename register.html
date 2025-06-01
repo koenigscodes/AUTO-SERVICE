@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/main.js" defer></script>
+  <title>AUTOCARE SERVICE-REGISTER</title>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1>AUTO SERVICE</h1>
+      <div class="home"><a href="/">HOME</a></div>
+      <nav>
+        <ul>
+          <li><a href="/vehicles.html">VEHICLES</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <br>
+  <button class="back-btn" onclick="window.history.back()">Back</button>
+  <!--FORM SECTION-->
+  <div class="section-div">
+    <div id="alert"></div>
+    <section class="form-section">
+      <form class="form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="customer-name">Customer Name:</label>
+            <input type="text" id="customer-name" name="full-name" placeholder="Enter Customer Name">
+          </div>
+
+           <div class="form-group">
+            <label for="vehicle-regNo">Vehicle Reg_No:</label>
+            <input type="text" id="vehicle-regNo" name="RegNO" placeholder="Enter Reg_No">
+          </div>
+      
+          <div class="form-group">
+            <label for="vehicle-model">Vehicle Model:</label>
+            <select id="vehicle-model">
+              <option value=""> Select vehicle model </option>
+              <!-- <option value="Prado">Prado</option>
+              <option value="Lexus">Lexus</option>
+              <option value="Hilux">Hilux</option>
+              <option value="Hiace">Hiace</option> -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ECPM">ECPM:</label>
+            <input type="text" id="ecpm" name="ECPM" placeholder="Enter ECPM NO_">
+          </div>
+      
+          <div class="form-group">
+            <label for="vehicle-model">Job Type:</label>
+            <select name="model" id="job-type">
+              <option value=""> Select service type </option>
+              <option value="DIAGNOSIS">Diagnosis</option>
+              <option value="REPAIRS">Repairs</option>
+              <option value="PMS">PMS</option>
+              <option value="QUOTATION">Qoutation</option>
+              <option value="PAINT/BODY">Paint/Body</option>
+            </select>
+          </div>
+      
+          <div class="form-group form-full">
+            <label for="complaint">Job Details:</label>
+            <textarea id="details" name="complaint" placeholder="Describe job details..." rows="6"></textarea>
+          </div>
+      
+        </div>
+      
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>      
+    </section>
+  </div>    
+</body>
+</html>
