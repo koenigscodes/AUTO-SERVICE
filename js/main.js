@@ -9,6 +9,8 @@ const detailsInput = document.querySelector('#details');
 const jobNoInput = document.querySelector('#ecpm'); 
 const searchBar = document.querySelector('#search');
 
+let allModels = [];
+
 //Get Vehicle From Storage
 function getVehicles() {
   let vehicles = JSON.parse(localStorage.getItem('vehicles')) || [];
@@ -23,14 +25,16 @@ function onSubmit(e) {
     
     const vehicles = getVehicles();
 
-    const customerName = customerNameInput.value;
-    const regNo = regNoInput.value;
+    const customerName = customerNameInput.value.toUpperCase();
+    const regNo = regNoInput.value.toUpperCase();
     const jobDetails = detailsInput.value.toUpperCase();
     const model = modelSelect.value.toUpperCase();
     const jobType = jobTypeSelect.value;
     const ecpmNo = jobNoInput.value;
 
     const editingId = form.dataset.editingId;
+
+    const carModel = model.toLowerCase();
 
     //If editing vehicle//
     if(editingId) {
@@ -45,8 +49,11 @@ function onSubmit(e) {
           ECPM: ecpmNo,
           job: jobType,
           jobDesc: jobDetails,
-          image: `/pics/${model.toLowerCase()}.png`
+          image: allModels.includes(carModel) 
+            ? `/pics/${model.toLowerCase()}.png`
+            : `/pics/toyota.png`
         }
+
       }
       //clearing the edit mode//  
       delete form.dataset.editingId;
@@ -65,8 +72,11 @@ function onSubmit(e) {
         ECPM: ecpmNo,
         job: jobType,
         jobDesc: jobDetails,
-        image: `/pics/${model.toLowerCase()}.png `
+        image: allModels.includes(carModel) 
+          ? `/pics/${model.toLowerCase()}.png`
+          : `/pics/toyota.png`
       };
+
       vehicles.push(newVehicle);
     }
   
@@ -107,7 +117,10 @@ async function loadModels() {
       option.value = car.id;
       option.textContent = car.label;
       model.appendChild(option);
-    })
+    });
+
+    allModels = cars.map(car => car.id.toLowerCase());
+
   } catch (error) {
     console.log(`Error can not fetch model:`, error);
   }
@@ -296,14 +309,14 @@ function displayDetails() {
 
 
 //Initialise Page
-function initPage() {
+async function initPage() {
   switch (activePage) {
     case '/':
     case '/index.html':
       console.log('HOMEPAGE!');
       break;
     case '/register.html':
-      loadModels();
+      await loadModels();
       form.addEventListener('submit', onSubmit);
     activateEdit();
       console.log('REGISTER PAGE!!');
