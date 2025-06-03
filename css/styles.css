@@ -8,7 +8,7 @@
 
 :root {
   --primary-color:rgb(255, 255, 255);
-  --secondary-color:gold;
+  --secondary-color:#FFD700;
 }
 
 html, body {
@@ -29,7 +29,7 @@ ul{
   top: 0;
   left: 0;
   width: 100%; /* Full width */
-  background-color: rgba(250, 225, 2, 0.4); 
+  background-color: rgba(216, 194, 0, 0.658); 
   z-index: 0; /* Ensure it sits above other content */
   padding: 2px ; 
   font-family: sans-serif;
@@ -285,16 +285,16 @@ textarea {
   margin-top: 4px;
 }
 
-
 .alert-success {
   position: fixed;
-  padding: 30px 15px;
-  margin-bottom: 20px;
+  padding: 10px 5px;
+  margin-bottom: 10px;
   background-color: transparent;
-  font-size: larger;
-  color: #0bfc43;
-  border: none;
-  border-radius: 4px;
+  font-size: 25px;
+  color: #000000;
+  background-color: #FFD700;
+  border: black;
+  border-radius: 8px;
   text-align: left;
 }
 

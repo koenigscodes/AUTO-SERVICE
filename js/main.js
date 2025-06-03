@@ -100,7 +100,7 @@ function alertmessage() {
   `;
   setTimeout(() => {
     alertDiv.innerHTML = '';
-  }, 2000);
+  }, 2500);
 }
 
 //Load vehicle models for selection//
