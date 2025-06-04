@@ -329,3 +329,113 @@ textarea {
   color: black;
 }
 
+/* ======media queries====== */
+
+@media (max-width: 1024px) {
+  .body-sec {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .card-section {
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .info-card {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+
+  .info-card img {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .int {
+    margin-top: 20px;
+  }
+
+  #search {
+    width: 70%;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 0px;
+    text-align: center;
+  }
+
+  .home a,
+  li a {
+    font-size: 16px;
+    margin: 10px;
+    float: none;
+    display: inline-block;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .form {
+    padding: 1rem;
+    height: auto;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 90%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-btn,
+  .del-btn {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .btn {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    font-size: 14px;
+    padding-top: 20px;
+  }
+
+  .main-header {
+    padding: 0px;
+  }
+
+  .card-section {
+    padding: 1rem;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .card img {
+    aspect-ratio: 1 / 1; /* square for small devices */
+  }
+
+  .info-card {
+    padding-top: 20px;
+  }
+
+  .alert-success {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
